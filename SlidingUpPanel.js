@@ -167,7 +167,7 @@ class SlidingUpPanel extends React.Component {
 
   _isInsideDraggableRange(value) {
     return (
-      value >= -this.props.draggableRange.top + this.props.handleHeight &&
+      value >= -this.props.draggableRange.top - this.props.handleHeight &&
       value <= -this.props.draggableRange.bottom
     )
   }
