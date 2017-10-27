@@ -28,8 +28,9 @@ class SlidingUpPanel extends React.Component {
     onRequestClose: PropTypes.func,
     allowMomentum: PropTypes.bool,
     allowDragging: PropTypes.bool,
-    showBackdrop: PropTypes.bool
-  }
+    showBackdrop: PropTypes.bool,
+    handleHeight: PropTypes.number,
+  };
 
   static defaultProps = {
     visible: false,
@@ -166,7 +167,7 @@ class SlidingUpPanel extends React.Component {
 
   _isInsideDraggableRange(value) {
     return (
-      value >= -this.props.draggableRange.top &&
+      value >= -this.props.draggableRange.top + this.props.handleHeight &&
       value <= -this.props.draggableRange.bottom
     )
   }
